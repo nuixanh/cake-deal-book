@@ -40,4 +40,8 @@
  * Load the CakePHP default routes. Only remove this if you do not want to use
  * the built-in default routes.
  */
+    Router::connect('/rest/v1/listDeal', array('controller' => 'deal', 'action' => 'listDeal', '[method]' => 'GET'));
+
+    Router::parseExtensions('json');
+
 	require CAKE . 'Config' . DS . 'routes.php';
