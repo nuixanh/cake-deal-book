@@ -18,6 +18,7 @@
         "source": "https://github.com/cakephp/cakephp"
     },
     "require": {
+        "josegonzalez/cakephp-upload": "1.0.1",
         "php": ">=5.2.8",
         "ext-mcrypt": "*"
     },
