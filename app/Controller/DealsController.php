@@ -8,7 +8,7 @@
  */
 
 App::uses('Deal', 'Model');
-class DealController extends AppController{
+class DealsController extends AppController{
     public $components = array('RequestHandler');
     public $uses = array('Deal');
 
@@ -26,6 +26,18 @@ class DealController extends AppController{
 //        CakeLog::write('info', print_r($deal_list, true));
         $this->set(array(
             'data' => $deal_list,
+            '_serialize' => array('error_code', 'data')
+        ));
+    }
+    public function add() {
+    }
+    public function save() {
+        $data=$this->request->data;
+        $this->Deal->create();
+        $this->Deal->set($data);
+        $this->Deal->save();
+        $this->set(array(
+            'data' => $this->Deal->id,
             '_serialize' => array('error_code', 'data')
         ));
     }

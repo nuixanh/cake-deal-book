@@ -9,4 +9,9 @@
 App::uses('AppModel', 'Model');
 class Deal extends AppModel{
     public $name = 'Deal';
+    public $actsAs = array(
+        'Upload.Upload' => array(
+            'image'
+        )
+    );
 }
